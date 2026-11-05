@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "SATANAND • 3D Portfolio",
+    "title": "SATANAND • Portfolio",
     "logo": ["SATA", "NAND"],
     "footerName": "SATANAND",
     "whatsapp": {
@@ -84,7 +84,7 @@
         "description": "Cut monthly reporting time by 40% with Excel VBA and formula optimization. Real-time KPI dashboards for Sales, Production, and Dispatch for 50+ users.",
         "tags": ["Excel VBA", "Power BI", "DAX"],
         "links": []
-      }
+      },
       {
         "title": "Flow monitoring sheet with RBAC feature.",
         "description": "Role-Based Access Control feature loaded Flow Monitoring System to track and analyse the best performer in any organisation.",
