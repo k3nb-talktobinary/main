@@ -1,0 +1,123 @@
+{
+  "site": {
+    "title": "SATANAND • 3D Portfolio",
+    "logo": ["SATA", "NAND"],
+    "footerName": "SATANAND",
+    "whatsapp": {
+      "number": "918744833781",
+      "message": "Hello Satanand, we want to hire you."
+    }
+  },
+
+  "hero": {
+    "tag": "Portfolio of SATANAND",
+    "greeting": "Hi, I'm",
+    "name": "SATANAND",
+    "image": "kenb.png",
+    "status": "Open to work",
+    "intro": {
+      "before": "A ",
+      "bold": "Results-driven Data Analyst and MIS Executive",
+      "after": " with 4+ years of experience transforming manual processes into automated, data-driven systems. Expert in scalable workflow automation, real-time dashboards, and inventory management solutions."
+    },
+    "buttons": { "primary": "View Projects", "secondary": "Hire Me" },
+    "stats": [
+      { "value": 4, "suffix": "+", "label": "Years Experience" },
+      { "value": 50, "suffix": "+", "label": "Users Served" },
+      { "value": 40, "suffix": "%", "label": "Efficiency Gain" }
+    ]
+  },
+
+  "about": {
+    "heading": { "title": "About", "accent": "Me", "subtitle": "A quick intro about who I am and what I do." },
+    "paragraphs": [
+      "I'm SATANAND, a Results-driven Data Analyst and MIS Executive with 4+ years of experience transforming manual processes into automated, data-driven systems, using Excel VBA, Google Apps Script, Power BI, and Google AppSheet.",
+      "I specialize in architecting and deploying production-grade systems for resource-constrained MSME manufacturing environments using no-code/low-code platforms and AI-assisted development. Proven track record of reducing reporting time by 40%, eliminating manual errors, and enabling executive-level decision-making. Currently retained as technical consultant by two former employers."
+    ],
+    "info": [
+      { "label": "Location", "value": "New Delhi, India" },
+      { "label": "Role", "value": "MIS Executive & Data Analyst" },
+      { "label": "Availability", "value": "Full-time" },
+      { "label": "Email", "value": "satanand74@gmail.com" },
+      { "label": "Phone", "value": "+91-8744833781" }
+    ]
+  },
+
+  "tools": {
+    "heading": { "title": "Tech", "accent": "Tools", "subtitle": "The main tools and technologies I use to analyze data and build systems." },
+    "items": [
+      "Excel VBA", "Google Apps Script", "Google AppSheet", "Power BI", "Looker Studio",
+      "Power Query", "DAX", "JavaScript", "HTML/CSS", "Google Workspace",
+      "Microsoft Office 365", "Pivot Tables", "No-Code/Low-Code", "Process Automation",
+      "Inventory Management", "Warehouse Systems", "Production Tracking",
+      "Flow Monitoring", "Digital Workflows", "MIS Reporting"
+    ]
+  },
+
+  "skills": {
+    "heading": { "title": "Skills &", "accent": "Strengths", "subtitle": "Core competencies in automation, data analytics, and system architecture." },
+    "items": [
+      { "title": "Automation & Scripting", "description": "Advanced Excel (VBA, Macros, Power Query), Google Apps Script, and process automation to eliminate manual work.", "level": 95 },
+      { "title": "Application Development", "description": "Production-grade systems using Google AppSheet, No-Code/Low-Code platforms, JavaScript, HTML/CSS.", "level": 90 },
+      { "title": "Data Analytics & BI", "description": "Power BI, Looker Studio, Pivot Tables, DAX for converting raw data into actionable insights.", "level": 92 },
+      { "title": "Operations & Systems", "description": "Inventory Management, Warehouse Systems, Production Tracking, Flow Monitoring, MIS Reporting.", "level": 93 }
+    ]
+  },
+
+  "projects": {
+    "heading": { "title": "Featured", "accent": "Projects", "subtitle": "Production-grade systems deployed in live manufacturing operations." },
+    "items": [
+      {
+        "title": "Flow Monitoring System (FMS)",
+        "description": "Architected and deployed a custom FMS from scratch using Google Apps Script and Google Sheets for enterprise manufacturing, improving process visibility by 60%.",
+        "tags": ["Apps Script", "Google Sheets", "Automation"],
+        "links": []
+      },
+      {
+        "title": "Inventory Management System",
+        "description": "Warehouse system with unique coding for 500+ SKUs across zones, plus a mobile-first AppSheet search app for instant item location by low-literacy staff.",
+        "tags": ["AppSheet", "Inventory", "Mobile App"],
+        "links": []
+      },
+      {
+        "title": "Automated Reporting Dashboard",
+        "description": "Cut monthly reporting time by 40% with Excel VBA and formula optimization. Real-time KPI dashboards for Sales, Production, and Dispatch for 50+ users.",
+        "tags": ["Excel VBA", "Power BI", "DAX"],
+        "links": []
+      }
+    ]
+  },
+
+  "resume": {
+    "heading": { "title": "Resume &", "accent": "Experience", "subtitle": "Quick overview of my education and work timeline." },
+    "pdf": "Satanand_Resume.pdf",
+    "downloadLabel": "Download Resume (PDF)",
+    "experienceTitle": "Experience",
+    "experience": [
+      { "date": "August 2025 – Present", "title": "MIS Executive", "org": "AVA Engineering", "description": "Designed and implemented FMS, IMS, PMS, and VMS to streamline daily operations. Architected end-to-end workflows to prevent operational failures. Digitized employee records including attendance, overtime, and wages." },
+      { "date": "February 2025 – August 2025", "title": "MIS Executive", "org": "Unique Auto Products Pvt. Ltd.", "description": "Built custom FMS and IMS from scratch with Google Apps Script and Sheets. Automated dashboards improved process visibility by 60%." },
+      { "date": "July 2021 – February 2025", "title": "MIS Executive", "org": "STB Technologies Pvt. Ltd.", "description": "Warehouse system for 500+ SKUs, AppSheet inventory search app, Excel VBA automation cutting reporting time by 40%, and real-time KPI dashboards." }
+    ],
+    "educationTitle": "Education",
+    "education": [
+      { "date": "July 2023 – December 2026 (Expected)", "title": "B.Com", "org": "Indira Gandhi National Open University", "description": "Commerce with focus on business operations and management." },
+      { "date": "March 2020 – March 2021", "title": "12th Science", "org": "CBSE Board", "description": "Higher secondary education, Science stream." }
+    ]
+  },
+
+  "contact": {
+    "heading": { "title": "Contact &", "accent": "Socials", "subtitle": "Let's connect or work together on something awesome." },
+    "formUrl": "https://script.google.com/macros/s/AKfycbzFB2X6FUNK7PRGGxcjbwpD93Bei9DK0qC_bTZ4eOrGelDmDLB8s4VqVFyrtN0sKIJW/exec",
+    "items": [
+      { "label": "Email", "value": "choubeysatanand79@gmail.com", "href": "mailto:choubeysatanand79@gmail.com" },
+      { "label": "Phone", "value": "+91-8744833781", "href": "tel:+918744833781" },
+      { "label": "Location", "value": "New Delhi, India" }
+    ],
+    "socials": [
+      { "label": "GitHub", "url": "https://github.com/satanandkenb" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/satanand-5bb0b1240/" },
+      { "label": "MonkeyType", "url": "https://monkeytype.com/profile/satanandkenb" },
+      { "label": "Instagram", "url": "https://www.instagram.com/satanandstoic/" }
+    ]
+  }
+}

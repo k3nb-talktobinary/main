@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SATANAND • 3D Portfolio</title>
+<link rel="icon" type="image/png" href="kenb.png" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--accent:#6366f1;--cyan:#22d3ee;--amber:#f59e0b;--text:#e5e7eb;--soft:#9ca3af;--glass:rgba(10,14,32,.55);--line:rgba(148,163,184,.3)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,system-ui,sans-serif;background:#02030a;color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--cyan));z-index:100}
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(1100px,94vw);z-index:60;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(10,14,32,.7);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(18px)}
+.logo{font-weight:700;letter-spacing:.12em;font-size:.95rem}.logo span{color:var(--accent)}
+.links{display:flex;gap:6px;font-size:.84rem}
+.links a{padding:6px 11px;border-radius:999px;color:var(--soft);transition:.2s}
+.links a:hover,.links a.on{color:#fff;background:rgba(99,102,241,.25)}
+#burger{display:none;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+section{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 0 60px}
+.wrap{width:min(1000px,92vw)}
+.panel{background:var(--glass);border:1px solid var(--line);border-radius:24px;padding:40px 36px;backdrop-filter:blur(14px);box-shadow:0 25px 60px rgba(0,0,0,.5)}
+h2{margin:0 0 6px;font-size:2rem}h2 span,h1 span{color:var(--accent)}
+.sub{color:var(--soft);margin:0 0 26px;font-size:.95rem}
+p{color:var(--soft);line-height:1.7;font-size:.95rem}
+.reveal{opacity:0;transform:translateY(50px) rotateX(12deg);transition:opacity .9s,transform .9s;transform-origin:top}
+.reveal.in{opacity:1;transform:none}
+/* hero */
+#home .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.tag{display:inline-block;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:.75rem;color:var(--soft);background:var(--glass)}
+h1{font-size:3.2rem;line-height:1.1;margin:16px 0 12px}
+.hero-sub{max-width:540px}.hero-sub b{color:#fff;font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-flex;justify-content:center;padding:11px 22px;border-radius:999px;border:1px solid var(--line);font:500 .9rem Poppins;color:#fff;cursor:pointer;background:var(--glass);transition:.2s}
+.btn.p{background:linear-gradient(135deg,var(--accent),#4f46e5);border:0;box-shadow:0 12px 30px rgba(79,70,229,.5)}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.meta{display:flex;gap:26px}.meta b{display:block;font-size:1.7rem}.meta small{color:var(--soft)}
+.me{justify-self:center;position:relative;perspective:800px}
+.me img{width:250px;height:250px;object-fit:cover;border-radius:32px;border:1px solid var(--line);box-shadow:0 0 60px rgba(99,102,241,.45);transition:transform .15s}
+.open{position:absolute;bottom:10px;left:10px;padding:7px 12px;font-size:.75rem;border-radius:999px;background:rgba(10,14,32,.9);border:1px solid var(--line)}
+.open:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;margin-right:6px}
+/* grids */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:26px}
+.info div{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;margin-bottom:8px;border:1px solid var(--line);border-radius:12px;background:rgba(2,3,10,.5);font-size:.84rem}
+.info span{color:var(--soft)}
+.pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.pills span{padding:7px 14px;border-radius:999px;font-size:.8rem;background:rgba(99,102,241,.12);color:#c7d2fe;border:1px solid rgba(99,102,241,.45);transition:.2s}
+.pills span:hover{transform:translateY(-4px) scale(1.06);background:rgba(99,102,241,.35)}
+.grid{display:grid;gap:18px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:rgba(2,3,10,.55);border:1px solid var(--line);border-radius:18px;padding:18px;transition:transform .12s,box-shadow .2s;transform-style:preserve-3d;will-change:transform}
+.card:hover{box-shadow:0 20px 50px rgba(99,102,241,.35)}
+.card h3{margin:0 0 8px;font-size:1rem}.card p{font-size:.82rem;margin:0 0 12px}
+.bar{height:6px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--cyan));transition:width 1.4s .3s}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:.72rem;padding:3px 9px;border:1px solid var(--line);border-radius:999px}
+.tl{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.tl h3{margin-top:0}
+.tl ul{list-style:none;margin:0;padding:0 0 0 18px;border-left:1px solid var(--line)}
+.tl li{position:relative;margin-bottom:18px}
+.tl li:before{content:"";position:absolute;left:-24px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(99,102,241,.3)}
+.tl small{color:var(--soft)}.tl h4{margin:3px 0;font-size:.92rem}.tl p{margin:0;font-size:.8rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.contact ul{list-style:none;padding:0;margin:0 0 16px}.contact li{margin-bottom:10px;font-size:.9rem}.contact li small{display:block;color:var(--soft)}
+.soc{display:flex;flex-wrap:wrap;gap:8px}.soc a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:.8rem;transition:.2s}.soc a:hover{background:rgba(99,102,241,.3)}
+form label{display:block;font-size:.78rem;color:var(--soft);margin:10px 0 4px}
+form input,form textarea{width:100%;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(2,3,10,.6);color:#fff;font:inherit;font-size:.85rem;outline:0}
+form input:focus,form textarea:focus{border-color:var(--accent)}
+form .btn{width:100%;margin-top:14px}
+.wa{position:fixed;bottom:40px;right:30px;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 15px rgba(0,0,0,.4);z-index:70;transition:.2s}
+.wa:hover{transform:scale(1.12)}.wa img{width:36px;height:36px}
+footer{position:relative;z-index:1;text-align:center;padding:24px;color:var(--soft);font-size:.78rem}
+@media(max-width:900px){
+ .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(10,14,32,.97);border:1px solid var(--line);border-radius:16px;padding:10px}
+ .links.open{display:flex}#burger{display:block}
+ #home .wrap,.about,.tl,.contact{grid-template-columns:1fr}.me{order:-1}
+ .g4,.g3{grid-template-columns:1fr 1fr}h1{font-size:2.3rem}.panel{padding:26px 20px}}
+@media(max-width:600px){.g4,.g3{grid-template-columns:1fr}.wa{right:16px;bottom:20px}}
+/* --- 3D polish --- */
+#cur{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 65%);pointer-events:none;z-index:2;mix-blend-mode:screen}
+.panel{background:linear-gradient(145deg,rgba(24,28,60,.62),rgba(8,10,26,.5));box-shadow:0 30px 80px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.14),0 0 0 1px rgba(99,102,241,.18)}
+.wrap{transform-style:preserve-3d;will-change:transform}
+h1 span,h2 span{text-shadow:0 0 28px rgba(99,102,241,.85)}
+.card{position:relative}
+.card:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),transparent 60%);opacity:0;transition:opacity .2s;pointer-events:none}
+.card:hover:after{opacity:1}
+.me img{animation:glowp 4s ease-in-out infinite}
+@keyframes glowp{0%,100%{box-shadow:0 0 50px rgba(99,102,241,.6)}50%{box-shadow:0 0 75px rgba(34,211,238,.65)}}
+@media(max-width:900px){#cur{display:none}}
+.plinks{display:flex;gap:14px;margin-top:12px;font-size:.8rem}.plinks a{color:#a5b4fc}.plinks a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div id="cur"></div>
+<div id="bar"></div>
+
+<a class="wa" href="https://wa.me/918744833781?text=Hello%20Satanand,%20we%20want%20to%20hire%20you." target="_blank" title="Hire me via WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp" /></a>
+
+<header class="nav">
+  <div class="logo">SATA<span>NAND</span></div>
+  <nav class="links" id="links">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#tools">Tools</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+  </nav>
+  <button id="burger" aria-label="Menu">☰</button>
+</header>
+
+<main></main>
+<footer></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const head = h => `<h2>${esc(h.title)} <span>${esc(h.accent)}</span></h2><p class="sub">${esc(h.subtitle)}</p>`;
+const panel = (id, inner) => `<section id="${id}"><div class="wrap"><div class="panel reveal">${inner}</div></div></section>`;
+const tl = list => list.map(e => `<li><small>${esc(e.date)}</small><h4>${esc(e.title)} • ${esc(e.org)}</h4><p>${esc(e.description)}</p></li>`).join('');
+
+function render(D) {
+  const h = D.hero, a = D.about, r = D.resume, c = D.contact;
+  document.title = D.site.title;
+  document.querySelector('.logo').innerHTML = `${esc(D.site.logo[0])}<span>${esc(D.site.logo[1])}</span>`;
+  document.querySelector('.wa').href = `https://wa.me/${D.site.whatsapp.number}?text=${encodeURIComponent(D.site.whatsapp.message)}`;
+  document.querySelector('footer').innerHTML = `© <span id="yr"></span> ${esc(D.site.footerName)}. All rights reserved.`;
+
+  const home = `<section id="home"><div class="wrap">
+    <div class="reveal"><span class="tag">${esc(h.tag)}</span>
+      <h1>${esc(h.greeting)} <span>${esc(h.name)}</span></h1>
+      <p class="hero-sub">${esc(h.intro.before)}<b>${esc(h.intro.bold)}</b>${esc(h.intro.after)}</p>
+      <div class="btns"><a href="#projects" class="btn p">${esc(h.buttons.primary)}</a><a href="#contact" class="btn">${esc(h.buttons.secondary)}</a></div>
+      <div class="meta">${h.stats.map(s => `<div><b data-n="${+s.value}" data-s="${esc(s.suffix)}">0</b><small>${esc(s.label)}</small></div>`).join('')}</div>
+    </div>
+    <div class="me reveal"><img id="me" src="${esc(h.image)}" alt="Profile picture of ${esc(h.name)}" /><span class="open">${esc(h.status)}</span></div>
+  </div></section>`;
+
+  const about = panel('about', `${head(a.heading)}<div class="about"><div>${a.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div><div class="info">${a.info.map(i => `<div><span>${esc(i.label)}</span>${esc(i.value)}</div>`).join('')}</div></div>`);
+  const tools = panel('tools', `${head(D.tools.heading)}<div class="pills">${D.tools.items.map(t => `<span>${esc(t)}</span>`).join('')}</div>`);
+  const skills = panel('skills', `${head(D.skills.heading)}<div class="grid g4">${D.skills.items.map(s => `<div class="card tilt"><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p><div class="bar"><i data-w="${+s.level}"></i></div></div>`).join('')}</div>`);
+  const projects = panel('projects', `${head(D.projects.heading)}<div class="grid g3">${D.projects.items.map(p => `<article class="card tilt"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><div class="tags">${(p.tags || []).map(t => `<span>${esc(t)}</span>`).join('')}</div>${(p.links || []).length ? `<div class="plinks">${p.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')}</div>` : ''}</article>`).join('')}</div>`);
+  const resume = panel('resume', `${head(r.heading)}<div class="tl"><div><h3>${esc(r.experienceTitle)}</h3><ul>${tl(r.experience)}</ul></div><div><h3>${esc(r.educationTitle)}</h3><ul>${tl(r.education)}</ul><a href="${esc(r.pdf)}" class="btn p" download target="_blank">${esc(r.downloadLabel)}</a></div></div>`);
+  const contact = panel('contact', `${head(c.heading)}<div class="contact"><div><ul>${c.items.map(i => `<li><small>${esc(i.label)}</small>${i.href ? `<a href="${esc(i.href)}">${esc(i.value)}</a>` : esc(i.value)}</li>`).join('')}</ul><div class="soc">${c.socials.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join('')}</div></div>
+    <form id="cf"><label for="name">Name</label><input id="name" placeholder="Your name" required /><label for="email">Email</label><input id="email" type="email" placeholder="your@email.com" required /><label for="message">Message</label><textarea id="message" rows="4" placeholder="Tell me about your project or idea..." required></textarea><button class="btn p" type="submit">Submit</button></form></div>`);
+
+  document.querySelector('main').innerHTML = home + about + tools + skills + projects + resume + contact;
+}
+
+function boot(D) {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const mobile = innerWidth < 800, still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const GAP = 24;                       // z-distance between section objects
+  const secs = $$('main section');
+
+  /* ---------- Three.js scene ---------- */
+  const renderer = new THREE.WebGLRenderer({ canvas: $('#bg'), antialias: !mobile, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene(); scene.fog = new THREE.FogExp2(0x02030a, .016);
+  const camera = new THREE.PerspectiveCamera(60, 1, .1, 400); camera.position.z = 8;
+
+  // Real lighting: ambient + key + two coloured rim lights that travel with the camera
+  scene.add(new THREE.AmbientLight(0x505090, .9));
+  const key = new THREE.DirectionalLight(0xffffff, 1.2); key.position.set(5, 8, 6); scene.add(key);
+  const pA = new THREE.PointLight(0x22d3ee, 2.5, 40), pB = new THREE.PointLight(0xec4899, 2.5, 40); scene.add(pA, pB);
+
+  const palette = [0x6366f1,0x22d3ee,0xf59e0b,0xec4899,0x6366f1,0x22d3ee,0xf59e0b];
+  const solid = (g, c, o = {}) => new THREE.Mesh(g, new THREE.MeshStandardMaterial(Object.assign({ color: c, metalness: .75, roughness: .22, emissive: c, emissiveIntensity: .15 }, o)));
+  const wf = (g, c, op = .5) => new THREE.LineSegments(new THREE.WireframeGeometry(g), new THREE.LineBasicMaterial({ color: c, transparent: true, opacity: op }));
+  const edges = (g, c, op = .9) => new THREE.LineSegments(new THREE.EdgesGeometry(g), new THREE.LineBasicMaterial({ color: c, transparent: true, opacity: op }));
+  const gt = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), g = x.createRadialGradient(64,64,0,64,64,64); g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(.3,'rgba(255,255,255,.35)'); g.addColorStop(1,'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0,0,128,128); return new THREE.CanvasTexture(c); })();
+  const glow = (c, s) => { const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: gt, color: c, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: .75 })); sp.scale.set(s, s, 1); return sp; };
+  const spinK = (m, k) => { m.userData.k = k; return m; };
+
+  const total = GAP * (secs.length - 1) + 40;
+  // Stars
+  const SN = mobile ? 900 : 2200, pos = new Float32Array(SN * 3);
+  for (let i = 0; i < SN; i++) { pos[i*3] = (Math.random()-.5)*60; pos[i*3+1] = (Math.random()-.5)*40; pos[i*3+2] = 20 - Math.random()*total; }
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xaab4ff, size: .08, transparent: true, opacity: .8 })));
+  // Neon floor + ceiling grids → a tunnel you fly through
+  [-7, 7].forEach((y, i) => { const g = new THREE.GridHelper(300, 100, 0x6366f1, 0x2a2a6a); g.position.set(0, y, -total/2 + 20); g.material.transparent = true; g.material.opacity = i ? .18 : .45; scene.add(g); });
+  // Floating metallic shards for depth + parallax
+  const shapes = [new THREE.TetrahedronGeometry(.45), new THREE.OctahedronGeometry(.4), new THREE.BoxGeometry(.5,.5,.5), new THREE.IcosahedronGeometry(.35)], shards = [];
+  for (let i = 0; i < (mobile ? 24 : 60); i++) {
+    const s = solid(shapes[i % 4], palette[(Math.random()*7)|0], { flatShading: true, metalness: .6 });
+    s.position.set((Math.random()-.5)*34, (Math.random()-.5)*18, 10 - Math.random()*total);
+    s.userData = { r: [Math.random()*.02, Math.random()*.02], y: s.position.y, f: Math.random()*6 };
+    scene.add(s); shards.push(s);
+  }
+
+  // One hero object per section
+  const objs = [];
+  const add = (i, o, spin) => { o.userData = { i, spin, base: 0 }; objs.push(o); scene.add(o); return o; };
+
+  const hero = new THREE.Group();
+  const core = solid(new THREE.IcosahedronGeometry(1.7, 1), 0x6366f1, { flatShading: true, metalness: .9, roughness: .18 });
+  hero.add(core, spinK(wf(new THREE.IcosahedronGeometry(2.6, 1), 0x22d3ee, .45), -1.2), glow(0x6366f1, 10));
+  [0, 1].forEach(k => { const r = new THREE.Mesh(new THREE.TorusGeometry(3.2, .03, 8, 100), new THREE.MeshBasicMaterial({ color: k ? 0xec4899 : 0x22d3ee })); r.rotation.set(k ? 1.2 : .4, k ? .3 : 1, 0); hero.add(r); });
+  const sats = spinK(new THREE.Group(), 2.5);
+  for (let k = 0; k < 3; k++) { const s = solid(new THREE.SphereGeometry(.22, 16, 16), palette[k+1]); s.position.set(Math.cos(k*2.1)*3.2, Math.sin(k*2.1)*1.2, Math.sin(k*2.1)*3.2); sats.add(s); }
+  hero.add(sats); add(0, hero, [.1, .25, 0]);
+
+  const knot = new THREE.Group(); knot.add(solid(new THREE.TorusKnotGeometry(1.5, .42, 160, 20), 0x22d3ee, { metalness: .9, roughness: .15 }), glow(0x22d3ee, 9)); add(1, knot, [.15, .3, 0]);
+
+  const ring = new THREE.Group();
+  for (let k = 0; k < 12; k++) { const g = new THREE.BoxGeometry(.8,.8,.8), b = new THREE.Group(); b.add(solid(g, 0xf59e0b, { metalness: .6 }), edges(g, 0xffffff, .6)); const a = k/12*Math.PI*2; b.position.set(Math.cos(a)*2.9, Math.sin(a*2)*.7, Math.sin(a)*2.9); b.rotation.set(a, a, 0); ring.add(b); }
+  ring.add(glow(0xf59e0b, 8)); add(2, ring, [.05, .35, 0]);
+
+  const orb = new THREE.Group();
+  for (let k = 0; k < 4; k++) { const o = solid(new THREE.OctahedronGeometry(.9), palette[k], { flatShading: true }); const a = k/4*Math.PI*2; o.position.set(Math.cos(a)*2.5, Math.sin(a)*.8, Math.sin(a)*2.5); orb.add(o); }
+  orb.add(solid(new THREE.SphereGeometry(.7, 24, 24), 0xffffff, { emissiveIntensity: .6, metalness: .2 }), glow(0xec4899, 7)); add(3, orb, [.1, .5, .1]);
+
+  const stack = new THREE.Group();
+  [[2.6,0x6366f1,.22],[1.7,0x22d3ee,.6],[.9,0xf59e0b,1]].forEach(([s, c, op], k) => { const g = new THREE.BoxGeometry(s,s,s), m = new THREE.Group(); m.add(solid(g, c, { transparent: true, opacity: op }), edges(g, c, 1)); m.userData.k = k + 1; stack.add(m); });
+  stack.add(glow(0x6366f1, 9)); add(4, stack, [0, .15, 0]);
+
+  const rings = new THREE.Group();
+  [[2.7,0x6366f1],[2.1,0x22d3ee],[1.5,0xf59e0b]].forEach(([r, c], k) => { const t = solid(new THREE.TorusGeometry(r, .12, 16, 90), c); t.userData.k = k + 1; t.rotation.set(k, k*.6, 0); rings.add(t); });
+  rings.add(glow(0x22d3ee, 8)); add(5, rings, [0, 0, 0]);
+
+  const globe = new THREE.Group();
+  globe.add(new THREE.Points(new THREE.SphereGeometry(2.6, 44, 30), new THREE.PointsMaterial({ color: 0x22d3ee, size: .06 })), solid(new THREE.SphereGeometry(1, 32, 32), 0x22d3ee, { emissiveIntensity: .7 }), glow(0x22d3ee, 10));
+  add(6, globe, [.05, .25, 0]);
+
+  /* ---------- scroll + pointer ---------- */
+  let target = 0, prog = 0, mx = 0, my = 0, active = 0;
+  const cursor = $('#cur'), wraps = mobile ? [] : $$('.wrap');
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    prog = max > 0 ? scrollY / max : 0;
+    $('#bar').style.width = prog*100 + '%';
+    const y = scrollY + innerHeight/2; let f = 0;
+    for (let i = 0; i < secs.length; i++) {
+      const t = secs[i].offsetTop, h = secs[i].offsetHeight;
+      if (y >= t) f = i + Math.min((y - t) / h, 1) * (i < secs.length-1 ? 1 : 0);
+    }
+    target = Math.min(f, secs.length - 1);
+    const a = Math.round(target); if (a !== active) { active = a; $$('.links a').forEach((l, i) => l.classList.toggle('on', i === active)); }
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('pointermove', e => { mx = e.clientX/innerWidth - .5; my = e.clientY/innerHeight - .5; cursor.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; });
+
+  function resize() {
+    renderer.setSize(innerWidth, innerHeight);
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+    const side = innerWidth < 900 ? 0 : 5.6;
+    objs.forEach(o => { o.userData.base = side ? (o.userData.i % 2 ? -side : side) : 0; o.position.z = -o.userData.i * GAP; o.position.y = innerWidth < 900 ? 3 : 0; o.scale.setScalar(innerWidth < 900 ? .6 : 1); });
+    onScroll();
+  }
+  addEventListener('resize', resize); resize();
+
+  /* ---------- loop ---------- */
+  const clock = new THREE.Clock(); let cur = 0; const col = new THREE.Color();
+  function frame() {
+    const t = clock.getElapsedTime(), k = still ? 0 : 1;
+    cur += (target - cur) * .06;
+    camera.position.z = 8 - cur * GAP;
+    camera.position.x += (mx*1.6 - camera.position.x) * .05;
+    camera.position.y += (-my*1.0 - camera.position.y) * .05;
+    camera.lookAt(camera.position.x*.3, camera.position.y*.3, camera.position.z - 10);
+    camera.rotation.z = Math.sin(t*.2) * .02 * k;
+    pA.position.set(camera.position.x - 6, camera.position.y + 3, camera.position.z - 3);
+    pB.position.set(camera.position.x + 6, camera.position.y - 3, camera.position.z - 3);
+
+    objs.forEach(o => {
+      const u = o.userData;
+      o.rotation.x += u.spin[0]*.01*k; o.rotation.y += u.spin[1]*.01*k; o.rotation.z += u.spin[2]*.01*k;
+      o.position.x = u.base + Math.sin(t*.6 + u.i) * .3 * k;
+      o.children.forEach(c => { if (c.userData.k) { c.rotation.x += .004*c.userData.k*k; c.rotation.y += .006*c.userData.k*k; } });
+    });
+    shards.forEach(s => { const u = s.userData; s.rotation.x += u.r[0]*k; s.rotation.y += u.r[1]*k; s.position.y = u.y + Math.sin(t*.5 + u.f)*.8*k; });
+    core.scale.setScalar(1 + Math.sin(t*2)*.04*k);
+
+    col.setHex(palette[Math.min(active, 6)]).multiplyScalar(.06);
+    scene.fog.color.lerp(col.add(new THREE.Color(0x010208)), .03);
+    renderer.setClearColor(scene.fog.color, 1);
+    // content panels lean into the screen like 3D cards
+    wraps.forEach(w => { const r = w.getBoundingClientRect(), d = ((r.top + r.height/2)/innerHeight - .5)*2; w.style.transform = `perspective(1400px) rotateX(${-d*6}deg) rotateY(${mx*4}deg) translateZ(${-Math.abs(d)*60}px)`; });
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  frame();
+
+
+  /* ---------- UI: reveal, counters, skill bars, tilt ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in'); io.unobserve(e.target);
+    e.target.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%');
+    e.target.querySelectorAll('[data-n]').forEach(n => {
+      const end = +n.dataset.n, s = n.dataset.s, t0 = performance.now();
+      (function step(now) { const p = Math.min((now - t0)/1200, 1); n.textContent = Math.round(end*p) + (p === 1 ? s : ''); if (p < 1) requestAnimationFrame(step); })(t0);
+    });
+  }), { threshold: .15 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  $$('.tilt').forEach(c => {
+    c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); const x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5; c.style.setProperty('--mx',(x+.5)*100+'%'); c.style.setProperty('--my',(y+.5)*100+'%'); c.style.transform = `perspective(700px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateZ(14px)`; });
+    c.addEventListener('pointerleave', () => c.style.transform = '');
+  });
+  const me = $('#me');
+  addEventListener('pointermove', () => { me.style.transform = `rotateY(${mx*22}deg) rotateX(${-my*22}deg)`; });
+
+  $('#burger').onclick = () => $('#links').classList.toggle('open');
+  $$('.links a').forEach(a => a.addEventListener('click', () => $('#links').classList.remove('open')));
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* ---------- Contact form → Google Apps Script (unchanged) ---------- */
+  const form = $('#cf');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button'), txt = btn.innerText;
+    btn.innerText = 'Sending...'; btn.disabled = true;
+    fetch(D.contact.formUrl, {
+      method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: $('#name').value, email: $('#email').value, message: $('#message').value })
+    }).then(() => { alert('Thank you! Your message has been sent.'); form.reset(); })
+      .catch(() => alert('Something went wrong. Please try again.'))
+      .finally(() => { btn.innerText = txt; btn.disabled = false; });
+  });
+}
+
+fetch('data.json?v=' + Date.now())
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(D => { render(D); boot(D); })
+  .catch(err => {
+    console.error(err);
+    document.querySelector('main').innerHTML = '<section style="position:relative;z-index:1;display:flex;justify-content:center;padding-top:140px"><div class="wrap"><div class="panel"><h2>Could not load <span>data.json</span></h2><p>Make sure data.json sits next to index.html, is valid JSON, and the site is opened through a web server (GitHub Pages or VS Code Live Server). Browsers block loading it when the page is opened directly as a file.</p></div></div></section>';
+  });
+
+
+</script>
+</body>
+</html>
